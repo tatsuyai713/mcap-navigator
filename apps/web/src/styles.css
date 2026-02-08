@@ -1,0 +1,208 @@
+:root {
+  --bg: #efeae2;
+  --panel: #0f1d1b;
+  --panel-text: #eef3f1;
+  --panel-muted: rgba(238, 243, 241, 0.6);
+  --accent: #f26d21;
+  --accent-2: #39a79b;
+  --line: rgba(15, 29, 27, 0.18);
+  --shadow: 0 24px 60px rgba(15, 29, 27, 0.2);
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  color: #0c1716;
+  background: radial-gradient(circle at top left, #fff6ec, #efeae2 45%, #e2efe9);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 18px 24px;
+  background: linear-gradient(160deg, #0f1d1b 0%, #0b1615 70%, #0a1413 100%);
+  color: var(--panel-text);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.sidebar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--panel-muted);
+  font-family: var(--mono);
+  margin-top: 4px;
+}
+
+.ghost-button {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--panel-text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--mono);
+}
+
+.ghost-button:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.tree-panel {
+  flex: 1;
+  overflow: auto;
+  padding: 8px 4px 8px 0;
+}
+
+.selection-panel {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.selection-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--panel-muted);
+}
+
+.selection-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-family: var(--mono);
+}
+
+.selection-list li {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 6px 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selection-hint {
+  font-size: 12px;
+  color: var(--panel-muted);
+}
+
+.empty-state {
+  font-size: 12px;
+  color: var(--panel-muted);
+  padding: 10px 8px;
+}
+
+.viewer {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 22px 24px;
+  gap: 16px;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.viewer-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.viewer-subtitle {
+  font-size: 12px;
+  color: #4c5b58;
+  font-family: var(--mono);
+  margin-top: 4px;
+}
+
+.viewer-frame {
+  flex: 1;
+  background: #0b0f0e;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15, 29, 27, 0.18);
+}
+
+.viewer-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #0b0f0e;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .viewer {
+    padding-top: 0;
+  }
+}

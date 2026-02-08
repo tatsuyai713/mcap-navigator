@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+.env
+.env.*
+apps/web/dist
+apps/server/dist
+coverage
+*.log
+.corepack/
+.node/
+.tools/
+.dev-logs/
+.cache/
+dist/
+build/
