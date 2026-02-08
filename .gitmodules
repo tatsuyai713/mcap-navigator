@@ -1,0 +1,3 @@
+[submodule "lichtblick"]
+	path = lichtblick
+	url = git@github.com:tatsuyai713/lichtblick-mcap-navigator.git
