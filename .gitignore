@@ -13,3 +13,5 @@ coverage
 .cache/
 dist/
 build/
+.mcap
+mcap-data/

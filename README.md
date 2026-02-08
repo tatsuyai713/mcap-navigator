@@ -10,7 +10,6 @@
 - `./lichtblick/packages/mcap-portal` が UI と起動制御
 - `./lichtblick/packages/mcap-file-server` が MCAP ツリー取得と配信 API
 - `./mcap-data` が既定の MCAP ルート（存在すればこちらを優先）
-- ルート直下の `./apps` は旧プロトタイプで、現行フローでは使いません
 
 ### 前提
 
@@ -139,7 +138,6 @@ This is a browser UI that lets you pick a ROS2 `.mcap` from a left-side tree and
 - `./lichtblick/packages/mcap-portal` provides the UI and boot control
 - `./lichtblick/packages/mcap-file-server` provides the MCAP tree and file API
 - `./mcap-data` is the default MCAP root when present
-- `./apps` at the repo root is a legacy prototype and is not used
 
 ### Prerequisites
 
@@ -255,4 +253,3 @@ Logs are stored in `./lichtblick/.dev-logs/`.
 
 - `web-dev-server.log`
 - `mcap-file-server.log`
-
